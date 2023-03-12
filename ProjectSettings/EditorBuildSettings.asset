@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/BusScene.unity
+    guid: 7eff5cc3f06051149ae8645e71473121
   m_configObjects: {}
