@@ -26,8 +26,10 @@ public class OutlinSelection : MonoBehaviour
     private Transform highlight;
     private Transform selection;
     private RaycastHit raycastHit;
-
+    private Color originColor = new Color32(255, 205, 78,255);
+    //customized
     public static string NameOfObject;
+    
 
     void Update()
     {
@@ -57,6 +59,11 @@ public class OutlinSelection : MonoBehaviour
                 }
                 Debug.Log(highlight.gameObject.name + "is hover");
                 NameOfObject = highlight.gameObject.name;
+                if (selection != null)
+                {
+                    NameOfObject = selection.gameObject.name;
+                }
+
             }
             else
             {
@@ -75,14 +82,17 @@ public class OutlinSelection : MonoBehaviour
                 }
                 selection = raycastHit.transform;
                 selection.gameObject.GetComponent<Outline>().enabled = true;
+                selection.gameObject.GetComponent<Outline>().OutlineColor = originColor;
                 highlight = null;
                 Debug.Log(selection.gameObject.name + "is selected");
+                NameOfObject = selection.gameObject.name;
             }
             else
             {
                 if (selection)
                 {
                     selection.gameObject.GetComponent<Outline>().enabled = false;
+                    //selection.gameObject.GetComponent<Outline>().OutlineColor = originColor;
                     selection = null;
                 }
             }

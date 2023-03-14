@@ -10,18 +10,38 @@ public class ColliderEnable : MonoBehaviour
     {
         //Fetch the GameObject's Collider (make sure it has a Collider component)
         m_Collider = GetComponent<Collider>();
+        
     }
 
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Toggle the Collider on and off when pressing the space bar
-            m_Collider.enabled = !m_Collider.enabled;
-
-            //Output to console whether the Collider is on or not
-            Debug.Log("Collider.enabled = " + m_Collider.enabled);
+            toggleSpaceTrigger();
         }
 
+    }
+    public void toggleSpaceTrigger()
+    {
+        //Toggle the Collider on and off when pressing the space bar
+        m_Collider.enabled = !m_Collider.enabled;
+
+        //Output to console whether the Collider is on or not
+        //Debug.Log("Collider.enabled = " + m_Collider.enabled);
+    }
+    public void toggleSwitch(bool isOpen)
+    {
+        if (isOpen)
+        {
+            m_Collider.enabled = true;
+        }
+        else
+        {
+            m_Collider.enabled = false;
+        }
+        
+
+       
     }
 }
