@@ -20,7 +20,14 @@ public class ColliderEnable : MonoBehaviour
         {
             toggleSpaceTrigger();
         }
-
+        if (Input.GetKey(KeyCode.LeftAlt))
+        {
+            EnableCol();
+        }
+        else
+        {
+            DisableCol();
+        }
     }
     public void toggleSpaceTrigger()
     {
@@ -43,5 +50,13 @@ public class ColliderEnable : MonoBehaviour
         
 
        
+    }
+    private void EnableCol()
+    {
+        m_Collider.enabled = true;
+    }
+    private void DisableCol()
+    {
+        m_Collider.enabled = false;
     }
 }
