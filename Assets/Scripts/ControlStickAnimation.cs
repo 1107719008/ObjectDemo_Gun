@@ -10,9 +10,10 @@ public class ControlStickAnimation : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("ButtonName"))
+        if (Input.GetButton("NextButton"))
         {
             anim.SetInteger("Int name", num);
+            Debug.Log("btn press & num++");
             num++;
             if (num > animateNum)
             {
